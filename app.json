@@ -1,0 +1,36 @@
+{
+  "expo": {
+    "name": "awesomeness",
+    "description": "A very interesting project.",
+    "slug": "awesomeness",
+    "privacy": "public",
+    "sdkVersion": "30.0.0",
+    "platforms": ["ios", "android"],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/logo.png",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "FacebookAppId": "259162874742468",
+    "facebookScheme": "fb259162874742468",
+    "extra":{
+      "GoogleAppId":{
+        "ios":"287486224871-l6p8cuupm87fkq4h0dl5o9b5sraprcbd.apps.googleusercontent.com",
+        "android":"287486224871-cia72d79v8mecl9mesaf8rn87kvpn7qt.apps.googleusercontent.com"
+      }
+    }
+  }
+}
+ 
