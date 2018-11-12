@@ -1,21 +1,19 @@
 import React,{ Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native'
-// import {Image} from 'react-native'
-// import { images } from './../constants/images'
+import { inject } from 'mobx-react/native'
+
 import { OnBoardingLogo } from './../common/OnBoardingLogo'
 
+@inject('currentUser')
 export default class SplashScreen extends Component{
 
 componentDidMount(){
-    this.authCheck();
+    // this.checkAuth();
 }
 
-authCheck = ()=> {
-
-    setTimeout(() => {
-        this.props.navigation.navigate('Auth')
-    }, 2000);
-}
+checkAuth = async ()=> {
+await this.props.currentUser.setUpAuth()
+};
   
 
 

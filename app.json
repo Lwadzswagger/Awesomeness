@@ -23,8 +23,9 @@
     "ios": {
       "supportsTablet": true
     },
-    "FacebookAppId": "259162874742468",
+    "facebookAppId": "259162874742468",
     "facebookScheme": "fb259162874742468",
+    "facebookDisplayName": "KasiLam",
     "extra":{
       "GoogleAppId":{
         "ios":"287486224871-l6p8cuupm87fkq4h0dl5o9b5sraprcbd.apps.googleusercontent.com",

@@ -1,17 +1,21 @@
 import React,{ Component } from 'react';
-import { Alert,StyleSheet,View} from 'react-native'
+import {  StyleSheet,View} from 'react-native'
+import { inject } from 'mobx-react/native'
+
+
 import { OnBoardingLogo } from './../common/OnBoardingLogo'
 import {  LoginButtons } from './../common/LoginButtons'
 import { FacebookApi} from './../api/Facebook';
 import { GooogleApi } from '../api/Google';
 
-
-export default class LoginScreen  extends Component{
+@inject('currentUser')
+ class LoginScreen  extends Component{
 state = {}
 
 onGooglePress = async ()=>{
     try {
         const token = await GooogleApi.loginAsync()
+            await this.props.currentUser.login(token, 'GOOGLE')
            console.log('token', token);
            this.props.navigation.navigate('Main')
            
@@ -34,6 +38,7 @@ onFacebookPress = async ()=>{
 
 
 render(){  
+    console.log('props ', this.props)
     return(
     <View style={ styles.container}>
        <View><OnBoardingLogo/></View>
@@ -47,7 +52,8 @@ render(){
     )
 }
 }
-  
+export default LoginScreen ;
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
