@@ -19,7 +19,7 @@ export const CurrentUser = types.model('CurrentUser', {
 .actions(self => ({
 setUpAuth:flow(function*(){
 yield self.getAuthToken();
-yield   self.getUserInfo();
+yield self.getUserInfo();
 }),
 
     getUserInfo: flow(function*(){
@@ -30,12 +30,9 @@ yield   self.getUserInfo();
                 .headers({Authorization: `Bearer ${self.authToken}`})
                 .get()
                 .json();
-
-                console.log('res', res);
-
-                self.info = res;
-                console.log('info', self.info);
-                 
+ 
+                self.info = res; 
+                navigationService.navigate('Main')
             }
         } catch (error) {
             console.log('error', error);
