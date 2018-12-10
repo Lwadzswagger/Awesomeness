@@ -62,7 +62,7 @@ class HomeScreen extends Component {
     return (
       <Box f={1}>
         <StatusBar barStyle="light-content" />
-        <Box h={130} bg="white"  >
+        <Box h={130} bg="white" w={1}>
           <DealCaroussel />
         </Box>
 
