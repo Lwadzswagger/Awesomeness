@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { StatusBar, ScrollView,  View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
- 
+import { StatusBar, ScrollView, Image, TouchableOpacity, StyleSheet } from 'react-native';
+import { Box, Text } from 'react-native-design-utility';
 import { inject } from 'mobx-react/native';
 import {
   MaterialIcons,
@@ -53,7 +53,7 @@ class ProfileScreen extends Component {
   render() {
     const { authStore } = this.props;
     return (
-      <View style={{  flex: 1,backgroundColor:'white'  }} >
+      <Box f={1} bg="white">
         <StatusBar barStyle="dark-content" />
         <ScrollView>
           <ListColumn>
@@ -63,21 +63,21 @@ class ProfileScreen extends Component {
               </Text>
             </ListColumn.Left>
             <ListColumn.Right>
-              <View circle={50} avatar>
+              <Box circle={50} avatar>
                 <Image source={{ uri: authStore.info.avatarUrl }} />
-              </View>
+              </Box>
             </ListColumn.Right>
           </ListColumn>
           {LINKS.map(el => (
             <ListColumn link={el.link} key={el.title}>
               <ListColumn.Left>
-                <View style={{  flexDirection: "row",alignItems:'center'  }} >
-                  <View style={{  flex: 0.2}} >{el.icon}</View>
+                <Box dir="row" align="center">
+                  <Box f={0.2}>{el.icon}</Box>
 
-                  <View style={{  flex: 1  }} >
+                  <Box f={1}>
                     <Text>{el.title}</Text>
-                  </View>
-                </View>
+                  </Box>
+                </Box>
               </ListColumn.Left>
               <ListColumn.Right>
                 <MaterialIcons name="keyboard-arrow-right" {...baseIconStyle} />
@@ -91,7 +91,7 @@ class ProfileScreen extends Component {
             </Text>
           </TouchableOpacity>
         </ScrollView>
-      </View>
+      </Box>
     );
   }
 }

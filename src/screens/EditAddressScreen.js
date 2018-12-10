@@ -1,5 +1,6 @@
-import React, { Component } from 'react'; 
-import {View, Text , Alert } from 'react-native';
+import React, { Component } from 'react';
+import { Box, Text } from 'react-native-design-utility';
+import { Alert } from 'react-native';
 import { action } from 'mobx';
 import { inject } from 'mobx-react/native';
 
@@ -58,7 +59,7 @@ class EditAddressScreen extends Component {
 
   render() {
     return (
-      <View style={{  flex: 1,  }}   >
+      <Box f={1}>
         <AddressForm
           editMode
           navigation={this.props.navigation}
@@ -66,7 +67,7 @@ class EditAddressScreen extends Component {
           save={this.save}
           deleteAddress={this.deleteAddress}
         />
-      </View>
+      </Box>
     );
   }
 }

@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { Image, StyleSheet, ScrollView, Dimensions } from 'react-native';
 import { Box } from 'react-native-design-utility';
 
-const { width: WIDTH } = Dimensions.get('window').width;
+const { width: WIDTH } = Dimensions.get('window');
 
 const images = [
   require('../../assets/img/food1.png'),
@@ -84,7 +84,7 @@ class DealCaroussel extends PureComponent {
               <Box
                 position="absolute"
                 dir="row"
-                style={{ height: 130, width: WIDTH }}
+                style={{ height: 130, width: WIDTH,}}
                 align="end"
                 justify="center"
                 pb="xs"

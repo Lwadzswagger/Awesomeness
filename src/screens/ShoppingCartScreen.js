@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { StatusBar, FlatList, TouchableOpacity, View, Text } from 'react-native';
+import { StatusBar, FlatList, TouchableOpacity } from 'react-native';
+import { Box, Text } from 'react-native-design-utility';
 import { inject, observer } from 'mobx-react/native';
 
 import CartItem from '../components/CartItem';
@@ -27,9 +28,9 @@ class ShoppingCartScreen extends Component {
 
     if (shoppingCartStore.totalProducts === 0) {
       return (
-        <View center style={{ flex: 1 }} >
+        <Box center f={1}>
           <Text>Cart Empty</Text>
-        </View>
+        </Box>
       );
     }
 
@@ -54,36 +55,38 @@ class ShoppingCartScreen extends Component {
     }
 
     return (
-      <View bg="white" p="xs"
-        style={{ backgroundColor: 'white', padding: 8 }} >
+      <Box bg="white" p="xs">
         <TouchableOpacity>
-          <View
-            style={{ height: 45, backgroundColor: 'grey', position: "relative" }}
-            center radius={6}  >
+          <Box h={45} bg="grey" center radius={6} position="relative">
             <Text bold color="white">
               Checkout
             </Text>
 
-            <View radius={6}  center 
- style={{ backgroundColor: theme.color.greyDark, padding: 8, position:"absolute", right: theme.space.xs }}
+            <Box
+              position="absolute"
+              bg="greyDark"
+              radius={6}
+              center
+              p="xs"
+              style={{ right: theme.space.xs }}
             >
               <Text color="white" size="xs">
                 ${shoppingCartStore.totalAmount}
               </Text>
-            </View>
-          </View>
+            </Box>
+          </Box>
         </TouchableOpacity>
-      </View>
+      </Box>
     );
   };
 
   render() {
     return (
-      <View style={{ flex: 1 }} >
+      <Box f={1}>
         <StatusBar barStyle="dark-content" />
         {this.renderList()}
         {this.renderCheckoutBtn()}
-      </View>
+      </Box>
     );
   }
 }

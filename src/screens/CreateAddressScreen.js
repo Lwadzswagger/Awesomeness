@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { Box, Text } from 'react-native-design-utility';
 import { action } from 'mobx';
 import { inject } from 'mobx-react/native';
 
@@ -28,9 +28,9 @@ class CreateAddressScreen extends Component {
 
   render() {
     return (
-      <View style={{  flex: 1  }}  >
+      <Box f={1}>
         <AddressForm navigation={this.props.navigation} save={this.save} />
-      </View>
+      </Box>
     );
   }
 }

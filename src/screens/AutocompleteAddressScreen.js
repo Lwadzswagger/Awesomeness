@@ -1,8 +1,9 @@
-import React from 'react'; 
+import React from 'react';
+import { Box, Text } from 'react-native-design-utility';
 import { GoogleAutoComplete } from 'react-native-google-autocomplete';
 import {
   TextInput,
-  StyleSheet, View, Text,
+  StyleSheet,
   ScrollView,
   ActivityIndicator,
 } from 'react-native';
@@ -12,8 +13,7 @@ import { theme } from '../constants/theme';
 import LocationItem from '../components/LocationItem';
 
 const AutocompleteAddressScreen = ({ navigation }) => (
-  <View 
-  style={{  flex: 1,backgroundColor:'#fff'  }} >
+  <Box f={1} bg="white">
     <GoogleAutoComplete apiKey={GOOGLE_API_KEY} components="country:ca">
       {({
         handleTextChange,
@@ -23,12 +23,8 @@ const AutocompleteAddressScreen = ({ navigation }) => (
         fetchDetails,
       }) => (
         <React.Fragment>
-          <View 
-          style={{  height:40,width:1, marginTop:10  }} 
-            center >
-            <View
-            style={{  backgroundColor:theme.color.greyLighter,padding:8, height:'90%', width:'90%'  }} 
-             radius={6}>
+          <Box h={40} w={1} center mt={10}>
+            <Box bg="greyLighter" radius={6} h="90%" w="90%" p={8}>
               <TextInput
                 placeholder="Search address"
                 selectionColor={theme.color.green}
@@ -36,14 +32,13 @@ const AutocompleteAddressScreen = ({ navigation }) => (
                 onChangeText={handleTextChange}
                 value={inputValue}
               />
-            </View>
-          </View>
+            </Box>
+          </Box>
 
           {isSearching && locationResults.length === 0 ? (
-            <View h={1} w={1} 
-            style={{  width: 1,height:1  }} center>
+            <Box h={1} w={1} center>
               <ActivityIndicator color={theme.color.green} size="large" />
-            </View>
+            </Box>
           ) : (
             <ScrollView style={styles.list}>
               {locationResults.map(location => (
@@ -59,7 +54,7 @@ const AutocompleteAddressScreen = ({ navigation }) => (
         </React.Fragment>
       )}
     </GoogleAutoComplete>
-  </View>
+  </Box>
 );
 
 AutocompleteAddressScreen.navigationOptions = {

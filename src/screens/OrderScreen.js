@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import { StatusBar,View, Text  } from 'react-native'; 
+import { StatusBar } from 'react-native';
+import { Box, Text } from 'react-native-design-utility';
 
 class OrderScreen extends Component {
   state = {};
   render() {
     return (
-      <View style={{  flex:1 }} center>
+      <Box f={1} center>
         <StatusBar barStyle="light-content" />
         <Text>Order Screen</Text>
-      </View>
+      </Box>
     );
   }
 }

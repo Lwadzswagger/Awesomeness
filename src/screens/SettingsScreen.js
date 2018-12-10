@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { StatusBar, ScrollView, View, Text } from 'react-native'; 
+import { StatusBar, ScrollView } from 'react-native';
+import { Box, Text } from 'react-native-design-utility';
 import { EvilIcons, MaterialIcons } from '@expo/vector-icons';
 
 import { theme } from '../constants/theme';
@@ -30,21 +31,19 @@ class SettingsScreen extends Component {
   state = {};
   render() {
     return (
-      <View style={{  flex: 1,backgroundColor:'white'  }} 
-       >
+      <Box f={1} bg="white">
         <StatusBar barStyle="dark-content" />
         <ScrollView>
           {LINKS.map(el => (
             <ListColumn link={el.link} key={el.title}>
               <ListColumn.Left>
-                <View style={{  flexDirection: "row",alignItems:'center'  }} 
-               >
-                  <View style={{  flex:0.2 }}  >{el.icon}</View>
+                <Box dir="row" align="center">
+                  <Box f={0.2}>{el.icon}</Box>
 
-                  <View style={{  flex: 1 }} >
+                  <Box f={1}>
                     <Text>{el.title}</Text>
-                  </View>
-                </View>
+                  </Box>
+                </Box>
               </ListColumn.Left>
               <ListColumn.Right>
                 <MaterialIcons name="keyboard-arrow-right" {...baseIconStyle} />
@@ -52,7 +51,7 @@ class SettingsScreen extends Component {
             </ListColumn>
           ))}
         </ScrollView>
-      </View>
+      </Box>
     );
   }
 }

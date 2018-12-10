@@ -1,5 +1,6 @@
-import React, { Component } from 'react'; 
-import { ScrollView,View } from 'react-native';
+import React, { Component } from 'react';
+import { Box } from 'react-native-design-utility';
+import { ScrollView } from 'react-native';
 import { inject } from 'mobx-react/native';
 
 import ProductCard from '../components/ProductCard';
@@ -7,19 +8,19 @@ import ProductCard from '../components/ProductCard';
 @inject('productsStore')
 class CategoryScreen extends Component {
   static navigationOptions = ({ navigation }) => ({
-    title: navigation.getParam('name', 'InStore'),
+    title: navigation.getParam('name', 'KasiLam'),
   });
 
   state = {};
   render() {
     return (
-      <View>
+      <Box>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           {this.props.productsStore.data.map(product => (
             <ProductCard key={product.id} product={product} />
           ))}
         </ScrollView>
-      </View>
+      </Box>
     );
   }
 }

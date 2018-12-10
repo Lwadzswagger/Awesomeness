@@ -3,8 +3,9 @@ import { StatusBar, FlatList } from 'react-native';
 import { Box, Text } from 'react-native-design-utility';
 
 import CategoryCard from '../components/CategoryCard';
-import { theme } from '../constants/theme';
 import DealCaroussel from '../components/DealCaroussel';
+
+import { theme } from '../constants/theme';
 import ProfileBtn from '../commons/ProfileBtn';
 
 const categories = [
@@ -61,7 +62,7 @@ class HomeScreen extends Component {
     return (
       <Box f={1}>
         <StatusBar barStyle="light-content" />
-        <Box h={130} bg="white" w={1}>
+        <Box h={130} bg="white"  >
           <DealCaroussel />
         </Box>
 
