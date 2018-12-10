@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { StatusBar, FlatList, View, Text  } from 'react-native'; 
+import { StatusBar, FlatList } from 'react-native';
+import { Box, Text } from 'react-native-design-utility';
 
 import CategoryCard from '../components/CategoryCard';
 import { theme } from '../constants/theme';
@@ -46,26 +47,25 @@ class HomeScreen extends Component {
       style.borderLeftColor = theme.color.greyLighter;
     }
     return (
-      <View style={{  width:(1 / NUM_COLUMNS) ,height:120, backgroundColor:'#fff'  }} 
-        style={style}>
+      <Box w={1 / NUM_COLUMNS} bg="white" h={120} style={style}>
         <CategoryCard {...item} />
-      </View>
+      </Box>
     );
   };
 
   keyExtractor = item => String(item.id);
 
-  separator = () => <View style={{  height:2, backgroundColor:theme.color.greyLighter }}/>;
+  separator = () => <Box h={2} bg="greyLighter" />;
 
   render() {
     return (
-      <View style={{  flex: 1  }} >
+      <Box f={1}>
         <StatusBar barStyle="light-content" />
-        <View style={{  height: 130,backgroundColor:'white', width:1 }}>
+        <Box h={130} bg="white" w={1}>
           <DealCaroussel />
-        </View>
+        </Box>
 
-        <View style={{  flex: 1,padding:10 }} >
+        <Box f={1} p={10}>
           <FlatList
             data={categories}
             renderItem={this.renderItem}
@@ -73,8 +73,8 @@ class HomeScreen extends Component {
             numColumns={NUM_COLUMNS}
             ItemSeparatorComponent={this.separator}
           />
-        </View>
-      </View>
+        </Box>
+      </Box>
     );
   }
 }

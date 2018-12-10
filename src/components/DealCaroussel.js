@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
-import { Image, StyleSheet, ScrollView, Dimensions,View } from 'react-native'; 
+import { Image, StyleSheet, ScrollView, Dimensions } from 'react-native';
+import { Box } from 'react-native-design-utility';
 
-const { width: WIDTH } = Dimensions.get('window');
+const { width: WIDTH } = Dimensions.get('window').width;
 
 const images = [
   require('../../assets/img/food1.png'),
@@ -15,7 +16,7 @@ const TIME = 3000;
 class DealCaroussel extends PureComponent {
   constructor(props) {
     super(props);
-
+ 
     this.state = {
       currentIndex: 0,
     };
@@ -64,7 +65,7 @@ class DealCaroussel extends PureComponent {
 
   render() {
     return (
-      <View>
+      <Box>
         <ScrollView
           horizontal
           showsHorizontalScrollIndicator={false}
@@ -74,20 +75,22 @@ class DealCaroussel extends PureComponent {
           onScroll={this.onScroll}
         >
           {images.map((img, i) => (
-            <View
+            <Box
               key={i}
-           
-              style={{ height: 130,   position:"relative", width: WIDTH }}
+              position="relative"
+              style={{ height: 130, width: WIDTH }}
             >
               <Image source={img} />
-              <View
-             
-                style={{ height: 130,  flexDirection:"row",alignItems:"flex-end", justifyContent:"center",
-                paddingBottom:8, position:"absolute",width: WIDTH }}
-                 
+              <Box
+                position="absolute"
+                dir="row"
+                style={{ height: 130, width: WIDTH }}
+                align="end"
+                justify="center"
+                pb="xs"
               >
                 {Array.from({ length: images.length }).map((_, index) => (
-                  <View
+                  <Box
                     key={index}
                     bg={
                       this.state.currentIndex === index
@@ -99,11 +102,11 @@ class DealCaroussel extends PureComponent {
                     mx={DOT_SIZE / 2}
                   />
                 ))}
-              </View>
-            </View>
+              </Box>
+            </Box>
           ))}
         </ScrollView>
-      </View>
+      </Box>
     );
   }
 }

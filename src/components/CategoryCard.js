@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
-import { Image, TouchableOpacity, View, Text, StyleSheet } from 'react-native'; 
+import { Image, TouchableOpacity, StyleSheet } from 'react-native';
+import { Box, Text } from 'react-native-design-utility';
 
 import { NavigationService } from '../api/NavigationService';
 
@@ -14,20 +15,18 @@ class CategoryCard extends PureComponent {
     const { title, image } = this.props;
     return (
       <TouchableOpacity onPress={this.handlePress} style={styles.button}>
-        <View center  
-        style={{  flex: 1  }} >
+        <Box center f={1}>
           {image && (
-            <View center
-            style={{  marginBottom: 16,   }} >
+            <Box center mb="sm">
               <Image source={image} />
-            </View>
+            </Box>
           )}
-          <View center>
+          <Box center>
             <Text size="sm" center capitalizeEach color="greyDarker">
               {title}
             </Text>
-          </View>
-        </View>
+          </Box>
+        </Box>
       </TouchableOpacity>
     );
   }
