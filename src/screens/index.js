@@ -119,7 +119,7 @@ const HomeStack = createStackNavigator(
 HomeStack.navigationOptions = ({ navigation }) => {
   let tabBarVisible = true;
 
-  console.log('navigation', navigation);
+  // console.log('navigation', navigation);
 
   if (
     NavigationService.getCurrentRouteName(navigation.state) === 'ShoppingCart'
@@ -173,7 +173,7 @@ const AppNavigator = createSwitchNavigator(
     Main: MainNavigator,
   },
   {
-    initialRouteName: 'Main',
+    initialRouteName: 'Splash',
   },
 );
 

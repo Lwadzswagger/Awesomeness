@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { Image, StyleSheet, ScrollView, Dimensions } from 'react-native';
 import { Box } from 'react-native-design-utility';
 
-const { width: WIDTH } = Dimensions.get('window').width;
+const { width: WIDTH } = Dimensions.get('window');
 
 const images = [
   require('../../assets/img/food1.png'),
@@ -16,7 +16,7 @@ const TIME = 3000;
 class DealCaroussel extends PureComponent {
   constructor(props) {
     super(props);
- 
+
     this.state = {
       currentIndex: 0,
     };

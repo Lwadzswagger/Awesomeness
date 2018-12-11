@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StatusBar, FlatList } from 'react-native';
+import { StatusBar, FlatList ,Dimensions} from 'react-native';
 import { Box, Text } from 'react-native-design-utility';
 
 import CategoryCard from '../components/CategoryCard';
@@ -7,6 +7,7 @@ import DealCaroussel from '../components/DealCaroussel';
 
 import { theme } from '../constants/theme';
 import ProfileBtn from '../commons/ProfileBtn';
+const { width: WIDTH } = Dimensions.get('window').width;
 
 const categories = [
   {
@@ -16,7 +17,7 @@ const categories = [
   },
   {
     id: 2,
-    title: 'Drugs',
+    title: 'Medicine',
     image: require('../../assets/img/drugs.png'),
   },
   {
@@ -26,7 +27,7 @@ const categories = [
   },
   {
     id: 4,
-    title: 'video games',
+    title: 'other',
   },
 ];
 
@@ -60,9 +61,11 @@ class HomeScreen extends Component {
 
   render() {
     return (
-      <Box f={1}>
+      <Box f={1} disabled={true}>
         <StatusBar barStyle="light-content" />
-        <Box h={130} bg="white" w={1}>
+        <Box h={130} bg="white" 
+        style={{width: WIDTH }}
+        >  
           <DealCaroussel />
         </Box>
 
