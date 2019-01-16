@@ -41,7 +41,10 @@ class LoginScreen extends Component {
   onGooglePress = async () => {
     try {
       const token = await GoogleApi.loginAsync();
+      // console.log('token not sent GOOGLE', token);
       this.props.authStore.login(token, 'GOOGLE');
+      
+      
     } catch (error) {
       console.log('error', error);
     }
@@ -50,8 +53,9 @@ class LoginScreen extends Component {
   onFacebookPress = async () => {
     try {
       const token = await FacebookApi.loginAsync();
-
-      // console.log('token', token);
+      // console.log('token not sent FACEBOOK', token);
+      this.props.authStore.login(token, 'FACEBOOK');
+      
     } catch (error) {
       console.log('error', error);
     }

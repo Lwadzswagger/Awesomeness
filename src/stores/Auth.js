@@ -38,6 +38,15 @@ export const AuthStore = types
         console.log('error', error);
       }
     }),
+    removeToken: flow(function*() {
+      try {
+        
+      yield AsyncStorage.removeItem(TOKEN_KEY);
+          NavigationService.navigate('Auth');
+                } catch (error) {
+        console.log('error', error);
+      }
+    }),
     login: flow(function*(providerToken, provider) {
       try {
         const res = yield customersApi

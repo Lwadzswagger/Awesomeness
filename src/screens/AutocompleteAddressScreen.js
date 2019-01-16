@@ -14,7 +14,7 @@ import LocationItem from '../components/LocationItem';
 
 const AutocompleteAddressScreen = ({ navigation }) => (
   <Box f={1} bg="white">
-    <GoogleAutoComplete apiKey={GOOGLE_API_KEY} components="country:ca">
+    <GoogleAutoComplete apiKey={GOOGLE_API_KEY} components="country:za">
       {({
         handleTextChange,
         inputValue,

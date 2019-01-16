@@ -8,8 +8,8 @@ class CategoryCard extends PureComponent {
   state = {};
 
   handlePress = () => {
-    console.log('test before crash ', this.props.title );
-    NavigationService.navigate('Category', { name: this.props.title });
+    // console.log('test before crash ',{ name:  this.props.title} );
+   NavigationService.navigate('Category');
   };
 
   render() {

@@ -8,7 +8,7 @@ import ProductCard from '../components/ProductCard';
 @inject('productsStore')
 class CategoryScreen extends Component {
   static navigationOptions = ({ navigation }) => ({
-    title: navigation.getParam('name', 'KasiLam'),
+    title: navigation.getParam('name', 'Kasi Lam'),
   });
 
   state = {};

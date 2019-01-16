@@ -24,11 +24,11 @@ const LINKS = [
     title: 'Invite friends',
     icon: <EvilIcons name="share-apple" {...baseIconStyle} />,
   },
-  {
-    link: 'Help',
-    title: 'Help',
-    icon: <Ionicons name="ios-help-circle-outline" {...baseIconStyle} />,
-  },
+  // {
+  //   link: 'Help',
+  //   title: 'Help',
+  //   icon: <Ionicons name="ios-help-circle-outline" {...baseIconStyle} />,
+  // },
   {
     link: 'About',
     title: 'About this app',
@@ -49,6 +49,15 @@ class ProfileScreen extends Component {
       <CloseBtn left size={25} onPress={() => navigation.goBack(null)} />
     ),
   });
+
+  onLogOutPress = async () => {
+    try {
+      this.props.authStore.removeToken();
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
+
   state = {};
   render() {
     const { authStore } = this.props;
@@ -59,7 +68,7 @@ class ProfileScreen extends Component {
           <ListColumn>
             <ListColumn.Left>
               <Text size="xl" bold>
-                Hi, {authStore.info.firstName}
+                Howdy, {authStore.info.firstName}
               </Text>
             </ListColumn.Left>
             <ListColumn.Right>
@@ -85,7 +94,7 @@ class ProfileScreen extends Component {
             </ListColumn>
           ))}
 
-          <TouchableOpacity style={styles.logoutBtn}>
+          <TouchableOpacity style={styles.logoutBtn} onPress={this.onLogOutPress}>
             <Text bold color="green">
               Log out
             </Text>

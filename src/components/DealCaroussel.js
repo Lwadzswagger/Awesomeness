@@ -6,8 +6,11 @@ const { width: WIDTH } = Dimensions.get('window');
 
 const images = [
   require('../../assets/img/food1.png'),
+  require('../../assets/img/spaza3.jpeg'), 
   require('../../assets/img/food2.png'),
-  require('../../assets/img/food3.png'),
+  require('../../assets/img/spaza1.jpg'),
+  require('../../assets/img/food3.png'), 
+  require('../../assets/img/spaza2.jpeg'), 
 ];
 
 const DOT_SIZE = 8;
