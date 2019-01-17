@@ -12,7 +12,7 @@ import { Feather } from '@expo/vector-icons';
 import { productImgs } from '../constants/images';
 import { theme } from '../constants/theme';
 import QtyHover from './QtyHover';
-
+ 
 const ANIM_DURATION = 200;
 
 const ViewAnimated = Animated.createAnimatedComponent(View);

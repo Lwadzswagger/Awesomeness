@@ -69,7 +69,7 @@ class LoginScreen extends Component {
       outputRange: [150, 0],
     });
 
-    console.log('props', this.props);
+    // console.log('props', this.props);
 
     return (
       <Box f={1} center bg="white">

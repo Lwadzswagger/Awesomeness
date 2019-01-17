@@ -19,7 +19,7 @@ class ShoppingCartScreen extends Component {
 
   state = {};
 
-  renderItem = ({ item }) => <CartItem product={item} />;
+  renderItem = ({ item }) => <Cart Item product={item} />;
 
   keyExtractor = item => String(item.id);
 

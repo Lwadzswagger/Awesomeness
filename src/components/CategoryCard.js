@@ -4,16 +4,17 @@ import { Box, Text } from 'react-native-design-utility';
 
 import { NavigationService } from '../api/NavigationService';
 
-class CategoryCard extends PureComponent {
+class CategoryCard extends PureComponent { 
   state = {};
 
   handlePress = () => {
-    // console.log('test before crash ',{ name:  this.props.title} );
-   NavigationService.navigate('Category');
-  };
+    NavigationService.navigate('Category' , {name : this.props.title}  );
+  }; 
 
   render() {
     const { title, image } = this.props;
+    // console.log(this.props);
+    
     
     
     return (

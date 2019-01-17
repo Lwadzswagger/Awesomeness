@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+ import React, { Component } from 'react';
 import {
   Image,
   StyleSheet,
@@ -24,7 +24,7 @@ class CartItem extends Component {
   state = {
     isHover: false,
   };
-
+ 
   componentWillUnmount() {
     LayoutAnimation.configureNext(CustomLayoutAnimation);
   }

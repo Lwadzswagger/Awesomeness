@@ -5,9 +5,9 @@ import { ProductModel } from '../models/Product';
 
 const authStore = AuthStore.create();
 
-const shoppingCartStore = ShoppingCartStore.create({ products: [] });
+const shoppingCartStore = ShoppingCartStore.create({ products:[] });
 
-const productsStore = ProductsStore.create({
+ const productsStore = ProductsStore.create({
   data: [
     ProductModel.create({
       id: '1',
